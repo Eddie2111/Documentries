@@ -44,3 +44,50 @@ def sorter(a):
     return a
 
 print(keyindex(sorter(a)).__void__())
+
+
+###take help from here
+
+step:1- Find the maximum number and create an auxiliary array of length max+1
+step:2- Traverse through the array A, 
+	for each element of A use it as the index of the aux and increment by 1
+step:3- 
+
+
+class KeyIndex:
+    k = []    # array of integers
+    # another global variable
+    def __init__(self, p):
+        mx = 0
+        mn = 0
+        negC = 0    # checking if any negative value exists
+        for i in range(len(p)):
+            if (p[i] < 0):
+                negC += 1
+        if (negC == 0):    # all positive values
+            for i in range(len(p)):
+                if (p[i] > mx):
+                    mx = p[i]
+            KeyIndex.k = [0]*(mx+1)
+            for i in range(len(p)):
+                for j in range(len(KeyIndex.k)):
+                    if (p[i] == j):
+                        KeyIndex.k[j] += 1
+            print("All positive!", KeyIndex.k)
+        elif (negC > 0):    # negative values present
+            for i in range(len(p)):
+                if (p[i] < mn):
+                    mn = p[i]
+            add = mn * (-1)
+            for i in range(len(p)):
+                p[i] += add
+            for i in range(len(p)):
+                if (p[i] > mx):
+                    mx = p[i]
+            KeyIndex.k = [0]*(mx+1)
+            for i in range(len(p)):
+                for j in range(len(KeyIndex.k)):
+                    if (p[i] == j):
+                        KeyIndex.k[j] += 1
+            print("Some negative!", KeyIndex.k)
+
