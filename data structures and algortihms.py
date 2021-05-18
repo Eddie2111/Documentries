@@ -1,4 +1,8 @@
-##Linear array:
+
+
+LINEAR_ARRAY = [10,20,30,40,50,0,0,0] ##length=8-3
+Circular_array = [0,0,10,20,30,40,50,0] ##length=8-3
+
 class node: #Singly linked list
     def __init__(self,data,next):
         self.data = data
@@ -9,6 +13,39 @@ class node1: #doubly linked list
         self.data=data
         self.next= next
         self.prev = prev
+        
+class DList:
+    def __init__(self):
+        self.head = None
+        self.datas = []
+    def append(self,data):
+        if self.head == None:
+            nnode = dnode(data)
+            nnode.prev = None
+            self.head = nnode
+        else:
+            nnode = dnode(data)
+            current = self.head
+            while current.ref:
+                current = current.ref
+            current.ref = nnode
+            nnode.prev = current
+            nnode.ref = None
+    def prepend(self,data):
+        #Supposed to add elements in the top#
+        pass
+    def print_list(self):
+        current = self.head
+        while current:
+            x = current.data
+            self.datas.append(x)
+            current = current.ref
+        return self.datas
+        
+def list_processing(a,dllist):
+    for i in range (len(a)):
+        dllist.append(a[i])
+    
         
 class stack:  #stack
     database= []
@@ -37,19 +74,6 @@ def selectionSort(array, size):
         # put min at the correct position
         (array[step], array[min_idx]) = (array[min_idx],array[step])
         
-def selection_sort(L):
-    # i indicates how many items were sorted
-    for i in range(len(L)-1):
-        # To find the minimum value of the unsorted segment
-        # We first assume that the first element is the lowest
-        min_index = i
-        # We then use j to loop through the remaining elements
-        for j in range(i+1, len(L)-1):
-            # Update the min_index if the element at j is lower than it
-            if L[j] < L[min_index]:
-                min_index = j
-        # After finding the lowest item of the unsorted regions, swap with the first unsorted item
-        L[i], L[min_index] = L[min_index], L[i]
         
 def insertion_sort(array):
     
@@ -138,5 +162,28 @@ def recus1(n):  #for memoization using lists
         return recus1(n-1)+recus1(n-2)
 print(recus1(7))
 
+def binarySearch(a,data,l,h):
+    if l>h:
+        return 0
+    else:
+        mid = (l + h) // 2
+        if data == a[mid]:
+            return "Present"
+        elif data<a[mid]:
+            return binarySearch(a,data,l,mid-1)
+        else:
+            return binarySearch(a,data,mid+1,h)
+def bubble_sorting(a,n):  ##IMPROVED
+    for i in range(n-1):
+        try:
+            if a[i]>a[i+1]:
+                temp = a[i]
+                a[i] = a[i+1]
+                a[i+1] = temp
+            if n-1>1:
+                bubble_sorting(a,n-1)
+        except:
+            None
+        
    
 
