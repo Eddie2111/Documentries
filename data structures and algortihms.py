@@ -1,4 +1,4 @@
-
+lst = [int(i) for i in input()] #to put every character in a list
 
 LINEAR_ARRAY = [10,20,30,40,50,0,0,0] ##length=8-3
 Circular_array = [0,0,10,20,30,40,50,0] ##length=8-3
