@@ -185,5 +185,31 @@ def bubble_sorting(a,n):  ##IMPROVED
         except:
             None
         
-   
+        
+#experiement-ternary search
+
+def ternarySearch(l,r,key,ar):
+    if (r>=l):
+        mid1,mid2=l+(r-l)//3,r-(r-l)//3
+        
+        if (ar[mid1]==key):
+            return mid1
+        if (ar[mid2]==key):
+            return mid2
+        
+        if (key<ar[mid1]):
+            return ternarySearch(l,mid1-1,key,ar)
+        if (key>ar[mid]):
+            return ternarySearch(mid2+1,r,key,ar)
+        
+        else:
+            return ternarySearch(mid1+1,mid2-1,key,ar)
+    return -1
+
+
+#l,p = 0,5
+#ar = [1,3,5,8,13,15,27,33,41,53]
+#r = len(ar)-1
+#key = 27
+#print('index:',ternarySearch(l, r, key, ar)+1)   
 
