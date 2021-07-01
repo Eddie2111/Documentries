@@ -5,8 +5,7 @@ Circular_array = [0,0,10,20,30,40,50,0] ##length=8-3
 
 class node: #Singly linked list
     def __init__(self,data,next):
-        self.data = data
-        self.next = next
+        self.data,self.next = data,next
         
 class node1: #doubly linked list
     def __init__(self,data,next,previous):
@@ -173,18 +172,6 @@ def binarySearch(a,data,l,h):
             return binarySearch(a,data,l,mid-1)
         else:
             return binarySearch(a,data,mid+1,h)
-def bubble_sorting(a,n):  ##IMPROVED
-    for i in range(n-1):
-        try:
-            if a[i]>a[i+1]:
-                temp = a[i]
-                a[i] = a[i+1]
-                a[i+1] = temp
-            if n-1>1:
-                bubble_sorting(a,n-1)
-        except:
-            None
-        
         
 #experiement-ternary search
 
@@ -212,4 +199,19 @@ def ternarySearch(l,r,key,ar):
 #r = len(ar)-1
 #key = 27
 #print('index:',ternarySearch(l, r, key, ar)+1)   
+
+def bubble_sorting(a,n):  ##IMPROVED
+    for i in range(n-1):
+        try:
+            if a[i]>a[i+1]:
+                temp = a[i]
+                a[i] = a[i+1]
+                a[i+1] = temp
+            if n-1>1:
+                bubble_sorting(a,n-1)
+        except:
+            None
+        
+        
+
 
