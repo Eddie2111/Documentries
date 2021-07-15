@@ -212,6 +212,89 @@ def bubble_sorting(a,n):  ##IMPROVED
         except:
             None
         
-        
+####Heap Data Structure####
+##Max heap##
+class MaxHeap:
+    heap=[]
+    def __init__(self,default=None):
+        self.default=default
+    def getParent(self,i):
+        return int( ((i-1)/2)-1 )
+    def left_child(self,i): #get-left
+        return 2*i+1
+    def right_child(self,i): #get-right
+        return 2*i+1
+
+    def has_parent(self,i):
+        if self.getParent(i)!= 0: 
+            return True
+        else: return False;
+    def has_leftChild(self,i):
+        if self.left_child(i)!= 0: 
+            return True
+        else: return False;
+    def has_rightChild(self,i):
+        if self.right_child(i)!= 0: 
+            return True
+        else: return False;
+
+    def swap(self,i,j):
+        self.heap[i],self.heap[j]=self.heap[j],self.heap[i]
+
+    def insert_key(self,key):
+        self.heap.append(key)
+        self.heapify_up(len(self.heap)-1)
+
+    def delete_root(self):
+        if len(self.heap)==0:
+            return -1
+        last=len(self.heap)-1
+        self.swap(0,last)
+        root=self.heap.pop(0)
+        self.heapify_down(0)
+        return root
+
+    def heapify_up(self,i):
+        while (self.has_parent(i)> self.heap[self.getParent(i)] and self.heap[i]> self.heap[self.getParent(i)]):
+            self.swap(i,self.getParent(i))
+            i=self.get_parent(i)
+    def heapify_down(self,i):
+        while(self.has_leftChild(i)):
+            max_child=self.get_max_child(i)
+            if max_child()== -1:
+                break;
+            if (self.heap[i] < self.heap[max_child]):
+                self.swap(i,max_child)
+                i=max_child
+            else: break;
+
+    def get_max_child(self,i):
+        if (self.has_leftChild(i)):
+            left_c=self.leftChild(i)
+            if (self.has_leftChild(i)):
+                right_c=self.rightChild(i)
+                if (self.heap[left_c]>self.heap[right_c]):
+                    return left_c
+                else: return right_c;
+        else: return -1;
+
+    def print_heap(self):
+        return self.heap
 
 
+MaxHeap()
+a=[45,90,63,27,29,57,42,35,12,24]
+for i in range(len(a)):
+    MaxHeap().insert_key(a[i])
+#print("initial heap: ")
+MaxHeap().insert_key(52)
+MaxHeap().print_heap()
+MaxHeap().insert_key(26)
+MaxHeap().print_heap()
+print(MaxHeap().getParent(57))
+a=MaxHeap().print_heap()
+print(a)
+for i in range(len(a)):
+    print(MaxHeap().getParent(a[i]),end=' ')        
+
+####____Max heap____####
