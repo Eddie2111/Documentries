@@ -1,4 +1,6 @@
-lst = [int(i) for i in input()] #to put every character in a list
+lst = [i for i in range(input())] #to create a sequential list by using a given range
+lst1=list(input("Enter numbers:").split(",")) #to put every character inside the list
+
 
 LINEAR_ARRAY = [10,20,30,40,50,0,0,0] ##length=8-3
 Circular_array = [0,0,10,20,30,40,50,0] ##length=8-3
