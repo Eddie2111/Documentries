@@ -300,3 +300,93 @@ for i in range(len(a)):
     print(MaxHeap().getParent(a[i]),end=' ')        
 
 ####____Max heap____####
+
+class graph:
+    dict1={} #main dict
+    def __init__(self,data=None):
+        self.data=data
+        #self.dict1={}
+    
+    def addVertex(self,key):#takes an int
+        self.key=int(key)
+        if self.key in self.dict1:
+            return 'vertex exists'
+        else:
+            self.dict1[self.key]=[]
+    
+    def addEdge(self,data_key,data_value):#takes a int and a list
+        self.data_key=data_key
+        self.data_value=data_value
+        self.data_value=[int(i) for i in self.data_value]
+        if self.data_key not in self.dict1:
+            self.dict1[self.data_key]=self.data_value
+        
+        else:
+            for i in range(len(self.data_value)):
+                if self.data_value[i] not in self.dict1[self.data_key]:
+                    self.dict1[self.data_key].append(self.data_value[i])
+
+    def printGraph(self):
+        print('adjacency list→')
+        for key, value in self.dict1.items(): 
+            print("{} : {}".format(key, value)) 
+        return self.dict1
+
+def graphBuilder(x):
+    for i in range(len(x)): 
+        graph().addVertex(x[i][0])
+        for j in range(1,len(x[i])):
+            graph().addEdge(x[i][0],[x[i][j]])#edge
+
+
+def bfs(visited, graph, node):   #task-2
+    queue = [] 
+    output=[] 
+    visited.append(node),queue.append(node)
+    while queue:
+        s = queue.pop(0) 
+        output.append(s)
+        try:
+            for x in graph[s]:
+                if x not in visited:
+                    visited.append(x)
+                    queue.append(x)
+        except:pass;
+    output=output[:-3]
+    return output
+
+
+count=[]
+def dfs(visited, graph, node):  #task3
+    if node not in visited:
+        count.append(node)
+        #print (node,end=' ')
+        visited.append(node)
+        for neighbour in graph[node]:
+            try:
+                dfs(visited, graph, neighbour)
+            except:
+                exit()
+    return count
+
+x=fileReader()
+graphBuilder(x)
+
+graph=graph().printGraph()
+visited_bfs,node,visited_dfs=[],1,[]
+x22=bfs(visited_bfs,graph,node)
+#print('bfs:',x22) ##OUTPUT BFS
+n1=str(x22)
+
+dfs_main=dfs(visited_dfs, graph, node)
+a1=dfs_main.index(max(dfs_main))
+for i in range(a1+1,len(dfs_main)):
+    dfs_main.pop(len(dfs_main)-1)
+#print("dfs:",dfs_main) ##OUTPUT DFS
+
+main_output=graph
+
+n2=str(dfs_main)
+main_output=str(graph)+"bfs: "+n1+"DFS: "+n2
+#printFiles(main_output)
+
