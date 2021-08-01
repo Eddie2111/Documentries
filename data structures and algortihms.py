@@ -114,6 +114,20 @@ def bubble_sort(a):
     
 bubble_sort(a)
 
+############### bubble stort level →2 ######
+#We have used extra variable named swap to check if the numbers are swapped or not to mitigate the number of loop
+#new time complexity: O(n)
+def bubbleSort(arr):   
+    for i in range(len(arr)): 
+        swap=False
+        for j in range(0,len(arr)-1-i):
+            if arr[j]>arr[j+1]:
+                arr[j+1],arr[j]=arr[j],arr[j+1]
+                swap=True
+        if not swap:
+            break
+###########
+
 def fibo(n):
     n = int(n)
     if n==0:
