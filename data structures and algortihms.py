@@ -383,6 +383,17 @@ def dfs(visited, graph, node):  #task3
                 exit()
     return count
 
+def dfs(a): #perfectly optimized #time: O(V+E)
+        main,x1=[],1
+        while x1!=12:
+            if x1 not in main:
+                main.append(x1)
+            for i in a[x1]:
+                if i not in main:
+                    main.append(i)
+            x1=main[len(main)-1]
+        print(main)
+
 x=fileReader()
 graphBuilder(x)
 
