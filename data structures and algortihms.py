@@ -1,3 +1,8 @@
+a=5
+print(f"the number is {a}")
+if 2<a<6:
+	print('yolo..!')
+
 lst = [i for i in range(input())] #to create a sequential list by using a given range
 lst1=list(input("Enter numbers:").split(",")) #to put every character inside the list
 lst1=[int(i) for i in lst1] #converts each of the elements in the list to int from str
