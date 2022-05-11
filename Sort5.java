@@ -26,5 +26,4 @@ public class Sort5 {
         }
         System.out.println("Sorted");
     }
-    
 }
