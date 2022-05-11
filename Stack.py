@@ -1,7 +1,6 @@
 stack = []
 stack_test = []
 
-
 a = '1+2*[3*3+{4–5(6(7/8/9)+10)}–11+(12*8)/{13+13}]+14}}'
 #for test
 for i in range (len(a)):
