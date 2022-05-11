@@ -81,7 +81,6 @@ public class Main {
             secondFittest.genes[i] = temp;
 
         }
-
     }
 
     //Mutation
@@ -132,7 +131,6 @@ public class Main {
 
 }
 
-
 //Individual class
 class Individual {
 
@@ -161,7 +159,6 @@ class Individual {
             }
         }
     }
-
 }
 
 //Population class
