@@ -4,4 +4,5 @@ def binary(x,base):
         print(a,'and',x-a*base)
         return binary(a,base)
         
+        
 binary(int(input('=>')),int(input('Base:')))
