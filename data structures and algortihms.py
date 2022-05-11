@@ -196,6 +196,7 @@ def binarySearch(a,data,l,h):
         
 #experiement-ternary search
 
+
 def ternarySearch(l,r,key,ar):
     if (r>=l):
         mid1,mid2=l+(r-l)//3,r-(r-l)//3
