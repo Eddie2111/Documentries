@@ -9,7 +9,5 @@ public class Alph {
         }else {
             System.out.println("Odd");
         }
-
     }
-    
 }
