@@ -8,6 +8,6 @@ def is_leap(year):
         return True
     else:
         return False
-
+## good year
 year = int(input())
 print(is_leap(year))
