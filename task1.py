@@ -1,4 +1,4 @@
-a = [-2,3,9,4,1,2,3]
+a = [-2,3,9,4,1,2,3,9]
 class keyindex:
     def __init__(self,a):
         self.a = a
