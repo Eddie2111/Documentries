@@ -29,6 +29,7 @@ public class Main {
             //Do selection
             demo.selection();
 
+
             //Do crossover
             demo.crossover();
 
