@@ -6,6 +6,7 @@ import { useCookies } from "react-cookie";
 export default function Web() {
   const [cookie, setCookie] = useCookies(["name"]);
   const array = ["cake", "ake", "cae", "ake"];
+  const value = ["1", "2", "3", "4"];
   function x(newName) {
     if (newName === "x") {
       setCookie("name", newName, { path: "/" });
@@ -17,9 +18,9 @@ export default function Web() {
       <h2>Start editing to see something happen!</h2>
       <p onClick={x("x")}>ppp</p>
       <select>
-        {
-        array.map((array) => <option value={array.value}>{array}</option>)
-        }
+        {array.map((array, value) => (
+          <option value={value}>{array}</option>
+        ))}
       </select>
     </div>
   );
