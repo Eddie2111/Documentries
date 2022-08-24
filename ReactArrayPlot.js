@@ -25,3 +25,56 @@ export default function Web() {
     </div>
   );
 }
+
+
+// plots objects in react
+import "./styles.css";
+//import {useState} from 'react';
+import { useCookies } from "react-cookie";
+export default function Web() {
+  const [cookie, setCookie] = useCookies(["name"]);
+  const employee = {
+    value:"21",
+    value1:"22",
+    value2:"23"
+  };
+  
+  function x(newName) {
+    if (newName === "x") {
+      setCookie("name", newName, { path: "/" });
+    }
+  }
+  return (
+    
+      <div>
+        {/* 👇️ iterate object KEYS */}
+        {Object.keys(employee).map((key, index) => {
+          return (
+            <div key={index}>
+              <h2>
+                {key}: {employee[key]}
+              </h2>
+  
+              <hr />
+            </div>
+          );
+        })}
+  
+        <br />
+        <br />
+        <br />
+  
+        {/* 👇️ iterate object VALUES */}
+        {Object.values(employee).map((value, index) => {
+          return (
+            <div key={index}>
+              <h2>{value}</h2>
+  
+              <hr />
+            </div>
+          );
+        })}
+      </div>
+    );
+  }
+  
