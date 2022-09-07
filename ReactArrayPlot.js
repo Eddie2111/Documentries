@@ -78,3 +78,39 @@ export default function Web() {
     );
   }
   
+  
+// next js data fetching
+
+  //get
+  
+  
+export const getStaticProps = async () => {
+    const res = await fetch("http://localhost:3200/test"); // only GET
+    const data = await res.json();
+    console.log(data)
+    return {
+        props: { Datas: data },
+    };
+};
+
+const Test = ({Datas}) => {
+    const data = "1";
+    return (
+        <>
+        <Banner/>
+        <Navbar2/>
+        <div className="containerMod">
+
+          <div className="grid grid-rows-2 md:grid-rows-6">
+      
+              <div className="row-span-1">
+                  <h1 className="text-4xl font-bold">{Datas.title}</h1>
+              </div>
+
+          </div>
+
+        </div>
+        </>
+    )
+}
+
