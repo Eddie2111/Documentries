@@ -45,22 +45,10 @@ REACT / REDUX / JAVASCRIPT / TYPESCRIPT / HTML / CSS / SASS / BOOTSTAP / TAILWIN
 
 <a href="#"><img width="100%" height="auto" src="https://i.imgur.com/bVQTPb4.png" height="175px"/></a>
 
-<h1 align="center">Hi <img src="https://raw.githubusercontent.com/MartinHeinz/MartinHeinz/master/wave.gif" width="30px">, I'm Fahim</h1>
+<h1 align="center">Hi <img src="https://raw.githubusercontent.com/MartinHeinz/MartinHeinz/master/wave.gif" width="30px"></h1>
 <h3 align="center">I'm a student of Computer Science & Engineering and Casual Gamer.</h3>
 
 ## 🙋‍♂️ About Me
-
-- 🔭 I’m currently working on **A land measurement App**
-
-- 🌱 I’m currently learning **Flutter**
-
-- 👯 I’m looking to collaborate on **OpenSource Projects**
-
-- 🧑‍💻 Interested in **Competitive Programing**
-
-- 📫 How to reach me **ash.fahim.x@gmail.com**
-
-- ⚡ Fun fact about me **I use light theme on Discord.**
 
 ## 🚀 Languages and Tools:
 
