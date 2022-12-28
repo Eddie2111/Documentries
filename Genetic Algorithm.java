@@ -1,5 +1,6 @@
 import java.util.Random;
 
+
 //Main class
 public class Main {
 
