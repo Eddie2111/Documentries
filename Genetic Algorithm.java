@@ -1,9 +1,6 @@
 import java.util.Random;
-
-
 //Main class
 public class Main {
-
     Population population = new Population();
     Individual fittest;
     Individual secondFittest;
