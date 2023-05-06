@@ -5,14 +5,12 @@ import (
 	"net/http"
 	
 )
-
 func main() {
 	m := map[string]int{
 		"apple":  1,
 		"banana": 2,
 		"orange": 3,
 	}
-
 	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
 		if r.Method == http.MethodGet {
 			fmt.Fprint(w, m)
